@@ -13,6 +13,9 @@ namespace imagelister
 {
     public partial class Form1 : Form
     {
+        //フィールド
+        String path = @"C:\ue8d";
+
         public Form1()
         {
             InitializeComponent();
@@ -42,8 +45,9 @@ namespace imagelister
             {
                 //選択されたフォルダを表示する
                 listBox1.Items.Add(folderBrowserDialog1.SelectedPath);
+                path = folderBrowserDialog1.SelectedPath;
             }
-            
+
         }
 
         /*
@@ -65,6 +69,30 @@ namespace imagelister
         private void 終了XToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        /*
+         * 
+         * 
+         * ここまでメニュー欄
+         * 
+         */
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label1.Text = path;
+            //"C:\test"以下のファイルをすべて取得する
+            //ワイルドカード"*"は、すべてのファイルを意味する
+            string[] files = System.IO.Directory.GetFiles(
+                path, "*", System.IO.SearchOption.AllDirectories);
+
+            //ListBox1に結果を表示する
+            listBox1.Items.AddRange(files);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
