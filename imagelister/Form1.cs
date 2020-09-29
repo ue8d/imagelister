@@ -23,7 +23,8 @@ namespace imagelister
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //Pathの表示
+            Label1(this.path);
         }
 
         private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
@@ -44,9 +45,11 @@ namespace imagelister
             if (folderBrowserDialog1.ShowDialog(this) == DialogResult.OK)
             {
                 //選択されたフォルダを表示する
-                listBox1.Items.Add(folderBrowserDialog1.SelectedPath);
-                path = folderBrowserDialog1.SelectedPath;
+                this.path = folderBrowserDialog1.SelectedPath;
             }
+
+            //Pathの表示
+            Label1(this.path);
 
         }
 
@@ -80,17 +83,75 @@ namespace imagelister
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label1.Text = path;
-            //"C:\test"以下のファイルをすべて取得する
+            //path以下のファイルをすべて取得する
             //ワイルドカード"*"は、すべてのファイルを意味する
             string[] files = System.IO.Directory.GetFiles(
-                path, "*", System.IO.SearchOption.AllDirectories);
+                this.path, "*", System.IO.SearchOption.AllDirectories);
 
             //ListBox1に結果を表示する
+            listBox1.Items.Clear();
             listBox1.Items.AddRange(files);
+
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            string imageDir = this.path; // 画像ディレクトリ
+            string[] jpgFiles = Directory.GetFiles(imageDir, "*.jpeg", SearchOption.AllDirectories);
+
+            int width = 100;
+            int height = 80;
+
+            imageList1.ImageSize = new Size(width, height);
+            listView1.LargeImageList = imageList1;
+
+            for (int i = 0; i < jpgFiles.Length; i++)
+            {
+                Image original = Bitmap.FromFile(jpgFiles[i]);
+                Image thumbnail = createThumbnail(original, width, height);
+
+                imageList1.Images.Add(thumbnail);
+                listView1.Items.Add(jpgFiles[i], i);
+
+                original.Dispose();
+                thumbnail.Dispose();
+            }
+        }
+
+        // 幅w、高さhのImageオブジェクトを作成
+        Image createThumbnail(Image image, int w, int h)
+        {
+            Bitmap canvas = new Bitmap(w, h);
+
+            Graphics g = Graphics.FromImage(canvas);
+            g.FillRectangle(new SolidBrush(Color.White), 0, 0, w, h);
+
+            float fw = (float)w / (float)image.Width;
+            float fh = (float)h / (float)image.Height;
+
+            float scale = Math.Min(fw, fh);
+            fw = image.Width * scale;
+            fh = image.Height * scale;
+
+            g.DrawImage(image, (w - fw) / 2, (h - fh) / 2, fw, fh);
+            g.Dispose();
+
+            return canvas;
+        }
+
+        //label1管理
+        private void Label1(String path)
+        {
+            label1.Text = "検索ファイル：" + path;
+        }
+
+        private void Label2(String str)
+        {
+            //デバック用
+            label2.Text = str;
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
