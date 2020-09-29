@@ -41,9 +41,9 @@ namespace imagelister
             if (folderBrowserDialog1.ShowDialog(this) == DialogResult.OK)
             {
                 //選択されたフォルダを表示する
-                Console.WriteLine(folderBrowserDialog1.SelectedPath);
+                listBox1.Items.Add(folderBrowserDialog1.SelectedPath);
             }
-            listBox1.Items.Add(folderBrowserDialog1.SelectedPath);
+            
         }
 
         /*
