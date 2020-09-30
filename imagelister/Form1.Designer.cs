@@ -44,13 +44,17 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.ヘルプHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.配布サイトToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.製作者TwitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ファイルFToolStripMenuItem});
+            this.ファイルFToolStripMenuItem,
+            this.ヘルプHToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -168,6 +172,29 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "label3";
             // 
+            // ヘルプHToolStripMenuItem
+            // 
+            this.ヘルプHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.配布サイトToolStripMenuItem,
+            this.製作者TwitterToolStripMenuItem});
+            this.ヘルプHToolStripMenuItem.Name = "ヘルプHToolStripMenuItem";
+            this.ヘルプHToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.ヘルプHToolStripMenuItem.Text = "ヘルプ(&H)";
+            // 
+            // 配布サイトToolStripMenuItem
+            // 
+            this.配布サイトToolStripMenuItem.Name = "配布サイトToolStripMenuItem";
+            this.配布サイトToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.配布サイトToolStripMenuItem.Text = "配布サイト";
+            this.配布サイトToolStripMenuItem.Click += new System.EventHandler(this.配布サイトToolStripMenuItem_Click);
+            // 
+            // 製作者TwitterToolStripMenuItem
+            // 
+            this.製作者TwitterToolStripMenuItem.Name = "製作者TwitterToolStripMenuItem";
+            this.製作者TwitterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.製作者TwitterToolStripMenuItem.Text = "製作者Twitter";
+            this.製作者TwitterToolStripMenuItem.Click += new System.EventHandler(this.製作者TwitterToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -183,7 +210,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "ImageLister";
+            this.Text = "ImageLister v.1.0.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -209,6 +236,10 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem ヘルプHToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 配布サイトToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 製作者TwitterToolStripMenuItem;
     }
 }
 
