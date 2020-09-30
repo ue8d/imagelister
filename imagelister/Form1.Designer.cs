@@ -35,6 +35,9 @@
             this.開くOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.終了XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ヘルプHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.配布サイトToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.製作者TwitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
@@ -44,9 +47,6 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.ヘルプHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.配布サイトToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.製作者TwitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,6 +97,29 @@
             this.終了XToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.終了XToolStripMenuItem.Text = "終了(&X)";
             this.終了XToolStripMenuItem.Click += new System.EventHandler(this.終了XToolStripMenuItem_Click);
+            // 
+            // ヘルプHToolStripMenuItem
+            // 
+            this.ヘルプHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.配布サイトToolStripMenuItem,
+            this.製作者TwitterToolStripMenuItem});
+            this.ヘルプHToolStripMenuItem.Name = "ヘルプHToolStripMenuItem";
+            this.ヘルプHToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.ヘルプHToolStripMenuItem.Text = "ヘルプ(&H)";
+            // 
+            // 配布サイトToolStripMenuItem
+            // 
+            this.配布サイトToolStripMenuItem.Name = "配布サイトToolStripMenuItem";
+            this.配布サイトToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.配布サイトToolStripMenuItem.Text = "配布サイト";
+            this.配布サイトToolStripMenuItem.Click += new System.EventHandler(this.配布サイトToolStripMenuItem_Click);
+            // 
+            // 製作者TwitterToolStripMenuItem
+            // 
+            this.製作者TwitterToolStripMenuItem.Name = "製作者TwitterToolStripMenuItem";
+            this.製作者TwitterToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.製作者TwitterToolStripMenuItem.Text = "製作者Twitter";
+            this.製作者TwitterToolStripMenuItem.Click += new System.EventHandler(this.製作者TwitterToolStripMenuItem_Click);
             // 
             // imageList1
             // 
@@ -166,34 +189,11 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(586, 32);
+            this.label3.Location = new System.Drawing.Point(579, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 12);
+            this.label3.Size = new System.Drawing.Size(42, 12);
             this.label3.TabIndex = 0;
             this.label3.Text = "label3";
-            // 
-            // ヘルプHToolStripMenuItem
-            // 
-            this.ヘルプHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.配布サイトToolStripMenuItem,
-            this.製作者TwitterToolStripMenuItem});
-            this.ヘルプHToolStripMenuItem.Name = "ヘルプHToolStripMenuItem";
-            this.ヘルプHToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.ヘルプHToolStripMenuItem.Text = "ヘルプ(&H)";
-            // 
-            // 配布サイトToolStripMenuItem
-            // 
-            this.配布サイトToolStripMenuItem.Name = "配布サイトToolStripMenuItem";
-            this.配布サイトToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.配布サイトToolStripMenuItem.Text = "配布サイト";
-            this.配布サイトToolStripMenuItem.Click += new System.EventHandler(this.配布サイトToolStripMenuItem_Click);
-            // 
-            // 製作者TwitterToolStripMenuItem
-            // 
-            this.製作者TwitterToolStripMenuItem.Name = "製作者TwitterToolStripMenuItem";
-            this.製作者TwitterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.製作者TwitterToolStripMenuItem.Text = "製作者Twitter";
-            this.製作者TwitterToolStripMenuItem.Click += new System.EventHandler(this.製作者TwitterToolStripMenuItem_Click);
             // 
             // Form1
             // 
