@@ -145,11 +145,6 @@ namespace imagelister
             label1.Text = "検索ファイル：" + path;
         }
 
-        private void Label2(String str)
-        {
-            //デバック用
-            label2.Text = str;
-        }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
