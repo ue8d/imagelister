@@ -25,6 +25,8 @@ namespace imagelister
         {
             //Pathの表示
             Label1(this.path);
+            label3.Text = "拡張子";
+            textBox1.Text = "jpg";
         }
 
         private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
@@ -96,8 +98,9 @@ namespace imagelister
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string extension = "*." + textBox1.Text;
             string imageDir = this.path; // 画像ディレクトリ
-            string[] jpgFiles = Directory.GetFiles(imageDir, "*.jpeg", SearchOption.AllDirectories);
+            string[] jpgFiles = Directory.GetFiles(imageDir, extension, SearchOption.AllDirectories);
 
             int width = 100;
             int height = 80;
@@ -145,11 +148,6 @@ namespace imagelister
             label1.Text = "検索ファイル：" + path;
         }
 
-        private void Label2(String str)
-        {
-            //デバック用
-            label2.Text = str;
-        }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
