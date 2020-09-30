@@ -76,6 +76,16 @@ namespace imagelister
             this.Close();
         }
 
+        private void 配布サイトToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/ue8d/imagelister");
+        }
+
+        private void 製作者TwitterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://twitter.com/ue8d_");
+        }
+
         /*
          * 
          * 
