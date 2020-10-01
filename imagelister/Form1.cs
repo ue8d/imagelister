@@ -108,6 +108,7 @@ namespace imagelister
 
         private void button2_Click(object sender, EventArgs e)
         {
+            listView1.Clear();
             string extension = "*." + textBox1.Text;
             string imageDir = this.path; // 画像ディレクトリ
             string[] jpgFiles = Directory.GetFiles(imageDir, extension, SearchOption.AllDirectories);
